@@ -7,7 +7,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const {Schema} = mongoose;
 // 5-11
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const findOrCreate = require('mongoose-findOrCreate');
+const findOrCreate = require('mongoose-findorcreate');
 
 const userSchema = new Schema({
   username: {
@@ -62,9 +62,10 @@ passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   // process.env. instead of GOOGLE
-  callbackURL: "https://carol-bookz-3.herokuapp.com/auth/google/admin" 
+  callbackURL: "https://carol-bookz-3.herokuapp.com/auth/google/admin"
   // https://carol-bookz-3.herokuapp.com/
-  // "http://localhost:3000/auth/google/admin"
+  // "https://carol-bookz-3.herokuapp.com/auth/google/admin" 
+  // 
   // put in place of this --> "http://www.example.com/auth/google/callback"
 },
 // change profile to email
