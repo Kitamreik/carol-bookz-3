@@ -73,10 +73,17 @@ module.exports = {
   */
   },
   logout: (request, response) => {
-    request.logout();
-    // destroy the session for the user
-    response.redirect('/')
-    // redirect back to the homepage
+    // new code as of 6/2022 - the correct logout function
+    request.logout(function(err) {
+      // destroy the session for the user
+      if (err) { return next(err); }
+      // redirect back to the homepage
+      response.redirect('/');
+    });
+    // old code
+    // request.logout();
+    // response.redirect('/')
+    
   },
   // 5-11
   google_get: passport.authenticate('google', { scope: ['openid', 'profile', 'email']}),
