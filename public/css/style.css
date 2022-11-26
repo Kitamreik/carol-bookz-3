@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
+/* NEW V.2 November 2022 */
+.expansion {
+    font-size: 1.8rem;
+}
+
+.minor-expansion {
+    font-size: 1.3rem;
+}
+
+/* OG Code */
 :root{
     --pink:rgba(195, 55, 100);
     --dark-color: rgb(168, 50, 88);
@@ -152,6 +162,7 @@ section{
     background:var(--pink);
 }
 
+/* Navbar */
 .header .header-2 .navbar{
     text-align: center;
 }
