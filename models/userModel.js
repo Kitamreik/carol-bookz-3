@@ -62,10 +62,8 @@ passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   // process.env. instead of GOOGLE
-  callbackURL: "https://carol-bookz-3.herokuapp.com/auth/google/admin"
-  // https://carol-bookz-3.herokuapp.com/
-  // "https://carol-bookz-3.herokuapp.com/auth/google/admin" 
-  // 
+  callbackURL: "https://kit-class-bookstore.cyclic.app/auth/google/admin"
+
   // put in place of this --> "http://www.example.com/auth/google/callback"
 },
 // change profile to email
