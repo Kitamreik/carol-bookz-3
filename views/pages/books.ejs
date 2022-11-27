@@ -24,7 +24,7 @@
 
 <section class="main-content" id="main-content">
 
-    <h1 class="heading"> <span>latest books for the beginner semester</span> </h1>
+    <h1 class="heading"> <span>latest books for the 3 semester long curriculum</span> </h1>
 
       <div class="main-content-layout">
         <!-- Using a for...of loop, loop through the inventoryArray and display each book -->
@@ -48,53 +48,6 @@
 <!-- OG: main-content section ends -->
 
 <!-- ADD new sections here -->
-<section class="main-content" id="main-content">
-
-  <h1 class="heading"> <span>latest books for the intermediate semester</span> </h1>
-
-    <div class="main-content-layout">
-      <!-- Using a for...of loop, loop through the inventoryArray and display each book -->
-      <% for (book of inventoryArray)  { %>
-        <a href="/books/<%= book._id %>" class="box">
-            <div class="content">
-                <h3><%= book.title %></h3>
-                <p class="author"><%= book.author %></p>
-                <p class="price">$<%= book.price %></p>
-                <div class="stars">
-                  <% for(let i = 0; i < book.starRating; i++) {%>
-                    <i class="fas fa-star"></i>
-                  <% }%>
-                </div>
-            </div>
-        </a>
-        <% } %> 
-    </div>  
-
-</section>
-
-<section class="main-content" id="main-content">
-
-  <h1 class="heading"> <span>latest books for the advanced semester</span> </h1>
-
-    <div class="main-content-layout">
-      <!-- Using a for...of loop, loop through the inventoryArray and display each book -->
-      <% for (book of inventoryArray)  { %>
-        <a href="/books/<%= book._id %>" class="box">
-            <div class="content">
-                <h3><%= book.title %></h3>
-                <p class="author"><%= book.author %></p>
-                <p class="price">$<%= book.price %></p>
-                <div class="stars">
-                  <% for(let i = 0; i < book.starRating; i++) {%>
-                    <i class="fas fa-star"></i>
-                  <% }%>
-                </div>
-            </div>
-        </a>
-        <% } %> 
-    </div>  
-
-</section>
 
 <!-- end -->
 

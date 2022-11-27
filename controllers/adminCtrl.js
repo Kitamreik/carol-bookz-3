@@ -12,6 +12,24 @@ module.exports = {
       response.redirect('/login')
     }
   },
+  how_to_admin: (request, response) => {
+    if (request.isAuthenticated()) {
+      response.render('pages/adminInfo', {
+        copyrightYear: siteData.year
+      });
+    } else {
+      response.redirect('/login')
+    }
+  },
+  logout: (request, response) => {
+    // new code as of 6/2022 - the correct logout function
+    request.logout(function(err) {
+      // destroy the session for the user
+      if (err) { return next(err); }
+      // redirect back to the homepage
+      response.redirect('/');
+    });
+  },
   admin_books: (request, response) => {
     if(request.isAuthenticated()){
       Book.find({}, (error, allBooks) => {
