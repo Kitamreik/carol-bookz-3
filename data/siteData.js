@@ -3,5 +3,7 @@ let date = new Date();
 module.exports = {
   userName: 'CodeSquader',
   year: date.getFullYear(),
-  signedIn: true
+  signedIn: false
+  // true to display CodeSquader
+  // false for customer
 }
