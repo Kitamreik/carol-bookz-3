@@ -1,7 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
+// const path = require('path'); // for node v 16
+const path = require('node:path');
 const methodOverride = require('method-override');
 // added in Code Along
 const session = require('express-session');
@@ -41,6 +42,7 @@ require('./config/connection');
 
 app.listen(PORT, () => {
     console.log(`The server is listening on port ${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });
 
 
