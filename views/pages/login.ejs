@@ -13,7 +13,12 @@
     </div>
     <div>
         <label for="password">Password: </label>
-        <input type="password" name="password" id="password" required />
+        <input type="password" name="password" id="password" value="" required />
+        <!-- <p id="text" onkeyup="capitalLetters()">WARNING! Caps lock is ENABLED.</p> -->
+    </div>
+    <div>
+      <!-- An element to toggle between password visibility -->
+      <input type="checkbox" onclick="passwordCheck()">Show Password
     </div>
     <div>
         <input type="submit" value="Submit"/>

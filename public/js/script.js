@@ -30,10 +30,17 @@ function deleteAlert() {
   }
 }
 
+let comingSoonButton = document.getElementById("coming-soon");
+function prepAlert() {
+  let notice;
+  if (confirm("Press OK for a message from the site admin.")) {
+    alert("Hello there! This part of the site is under development. Come back soon to see the changes!")
+  }
+}
 
-/* Note: Dark Mode Implementation started 4/21/2023, followed from: https://www.pullrequest.com/blog/how-to-implement-dark-mode-with-css-js/  */
 
 
+// scroll button placed in the footer
 //Get the button
 let scrollbutton = document.getElementById("scroll-button");
 
@@ -55,3 +62,18 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// Login/Register check password - 4/21
+function passwordCheck() {
+ const scan = document.getElementById("password");
+ //  set the tracking
+ if (scan.type === "password") {
+  // if the checkbox is checked, capture the text and show it
+  scan.type = "text";
+ } else {
+  scan.type = "password"
+  // if not, show the dots for security
+ }
+}
+
+
