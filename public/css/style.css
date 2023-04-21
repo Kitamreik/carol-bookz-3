@@ -15,9 +15,15 @@
     background-color: var(--pink);
 }
 
+/* Note: Dark Mode Implementation started 4/21/2023, followed from: https://www.pullrequest.com/blog/how-to-implement-dark-mode-with-css-js/  */
 
 /* OG Code */
 :root{
+    /* In the style.css file, add the following code for a default, (light) theme: */
+    --background-color: #fff;
+    --text-color: #0D1B2A;
+    /* End experimental dark mode code */
+    /* Note: import the CSS in the head.ejs */
     --pink:rgba(195, 55, 100);
     --dark-color: rgb(168, 50, 88);
     --header-pink:rgba(195, 55, 100, 0.8);
@@ -28,6 +34,13 @@
     --border:.1rem solid rgba(0,0,0,.1);
     --border-hover:.1rem solid var(--black);
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    /* added from PP */
+    --cosmic-latte:#FFF4E4;
+    --hot-pink:#FF57BB;
+    --orchid-crayola: #EF9CDA;
+     /* Accessibility Coloring */
+     --rich-black: #0D1B2A;
+     --black-chocolate: #1F1300;
 }
 
 * {
@@ -45,6 +58,33 @@ html{
     scroll-padding-top: 5rem;
     scroll-behavior: smooth;
 }
+/* start */
+
+/* Now that the scaffolding for the default (light) theme is set up, variables for the dark mode theme can be added.
+
+Add the following to style.css above the body declaration: */
+[data-theme="dark"] {
+    --background-color: #1F1300;
+    --text-color: #FFF4E4;
+}
+/* The [data-theme="dark"] theme can be toggled on/off (we’ll cover how to do this in the section below).
+The default appearance will be the light theme. This is why the theme is configured to the :root class and not a separate [data-theme="light"] class. */
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.dark-mode-content {
+    font-size: 3rem;
+    padding:.5rem 2rem;
+    color:var(--black);
+    background: var(--white);
+    border:var(--border);
+}
+/* End experimental dark mode code */
+
 
 .text-center {
   text-align: center;

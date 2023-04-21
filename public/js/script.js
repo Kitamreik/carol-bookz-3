@@ -29,3 +29,29 @@ function deleteAlert() {
     alert(warning = "Error: Data loss complete. Please use the Create Book/Author Pages to make a new entry. (Press OK to retain data - Site Admin)");
   }
 }
+
+
+/* Note: Dark Mode Implementation started 4/21/2023, followed from: https://www.pullrequest.com/blog/how-to-implement-dark-mode-with-css-js/  */
+
+
+//Get the button
+let scrollbutton = document.getElementById("scroll-button");
+
+// When the user scrolls down 2px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    // 200 works
+    // limit
+  if (document.body.scrollTop > 3 || document.documentElement.scrollTop > 3) {
+    scrollbutton.style.display = "block";
+  } else {
+    scrollbutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
