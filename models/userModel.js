@@ -31,7 +31,7 @@ userSchema.plugin(findOrCreate);
 // ---------DOCUMENTATION: MONGOOSE TIMEOUT ------
 // https://masteringjs.io/tutorials/mongoose/buffering-timed-out-after-10000ms
 
-// const User = mongoose.model('User', userSchema); // old code
+const User = mongoose.model('User', userSchema); // old code
 // -------- NEW -------
 async function run() {
   // Create a new connection and connect to MongoDB...
