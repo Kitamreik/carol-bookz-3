@@ -28,8 +28,24 @@ userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
 // plugin --> connects the schema to mongoose before going in collection
+// ---------DOCUMENTATION: MONGOOSE TIMEOUT ------
+// https://masteringjs.io/tutorials/mongoose/buffering-timed-out-after-10000ms
 
-const User = mongoose.model('User', userSchema);
+// const User = mongoose.model('User', userSchema); // old code
+// -------- NEW -------
+async function run() {
+  // Create a new connection and connect to MongoDB...
+  await mongoose.connect(`${process.env.DB_URL}`)
+
+  // But register a model on Mongoose's default connection
+  mongoose.model('User', userSchema);
+
+  await mongoose.model('User').findOne(); // should work
+}
+
+run();
+
+// ------------ end ---------
 
 // added in Code Along
 passport.use(User.createStrategy());
