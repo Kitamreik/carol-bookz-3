@@ -45,7 +45,7 @@ async function run() {
 
 run();
 
-// ------------ end ---------
+// ----------- end ---------
 
 // added in Code Along
 passport.use(User.createStrategy());
