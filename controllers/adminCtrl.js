@@ -30,21 +30,24 @@ module.exports = {
       response.redirect('/');
     });
   },
+
+  // MODIFIED 
   admin_books: (request, response) => {
-    if(request.isAuthenticated()){
-      Book.find({}, (error, allBooks) => {
-        if(error){
-          return error;
-        } else {
-          response.render('pages/adminBooks', {
+    Book.find({}, (error, allBooks) => {
+      if (error) {
+        return error;
+      } else {
+        if (request.isAuthenticated()) {
+          response.render("pages/adminBooks", {
             copyrightYear: siteData.year,
-            inventoryArray: allBooks
+            inventoryArray: allBooks,
           });
+        } else {
+          console.log("There is an error.");
+          response.redirect("/login");
         }
-      })
-    } else {
-      response.redirect('/login')
-    }
+      }
+    });
   },
   create_book: (request, response) => {
     if (request.isAuthenticated()) {
