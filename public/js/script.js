@@ -29,3 +29,36 @@ function deleteAlert() {
     alert(warning = "Error: Data loss complete. Please use the Create Book/Author Pages to make a new entry. (Press OK to retain data - Site Admin)");
   }
 }
+
+function adminTrigger() {
+  let confirm = prompt("Please enter the secret passcode now.");
+  let danger = "There has been an error. If you are a student having trouble logging in, please reach out to Kit.";
+  let auth = "Request authenticated. Now loading...";
+  
+
+  if (confirm) {
+    let record = confirm;
+    let passcode = "C00k13c@tz!";
+
+    while(record){
+      if (record == !passcode) {
+      alert(danger);
+    } else if (record == passcode) {
+      // once past, user can see the entries
+      alert(auth);
+      break;
+    } else {
+      let check = prompt("Please enter the secret passcode again.");
+      if (check == !passcode) {
+        window.location.replace("/");
+      } else {
+        // once past, user can see the entries
+        alert(auth);
+        break;
+      }
+      
+    } 
+  }
+
+} 
+};
