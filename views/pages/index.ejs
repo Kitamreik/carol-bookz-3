@@ -11,12 +11,11 @@
         <div class="content">
           <!-- Use the ternary operator to only show the userName if the signedIn variable is set to true, otherwise show the word "customer. -->
             <h3>Welcome <%= signedIn ? name : 'customer' %>!</h3>
-            <p>Carol's Bookstore was formerly run by Carol and she's going into retirement. While she is saddended to go, she has appointed the new site admin to be Kit Amreik (they/she).</p>
             <div class="content">
-                <p class="minor-expansion">Over time, this site will be updated to showcase all of the books A.P. students read throughout the curriculum.</p>
+                <p class="minor-expansion">Over time, this site will be updated to showcase all of the class recordings for A.P. students  throughout the curriculum.</p>
             </div>
             
-            <a href="/books" class="btn">Check the Bookstore Now!</a>
+            <!-- <a href="/books" class="btn">Check the Bookstore Now!</a> -->
         </div>
 
     </div>
@@ -64,4 +63,3 @@
 
 <!-- icons section ends -->
 
-<%- include('../partials/footer') -%> 

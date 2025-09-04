@@ -24,4 +24,8 @@ router.route('/auth/google')
 router.route('/auth/google/admin')
   .get(siteCtrl.google_redirect_get)
 
+//9-2025
+router.route('/capstone-25/videos')
+  .get(siteCtrl.videos)
+
 module.exports = router;
