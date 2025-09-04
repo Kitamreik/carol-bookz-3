@@ -39,8 +39,11 @@ app.use(routes);
 
 require('./config/connection');
 
+const user_url = process.env.USER_URL;
+
 app.listen(PORT, () => {
     console.log(`The server is listening on port ${PORT}`);
+    console.log(`To track users: ${user_url}`)
 });
 
 
