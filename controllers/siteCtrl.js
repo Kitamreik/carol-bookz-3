@@ -4,6 +4,13 @@ const passport = require('passport');
 // replacing bcrypt and salt rounds
 
 module.exports = {
+  archive: (request, response) => {
+    response.render('pages/archive', {
+        name: siteData.userName,
+        copyrightYear: siteData.year
+    });
+  },
+
   videos: (request, response) => {
     response.render('pages/videos', {
         name: siteData.userName,

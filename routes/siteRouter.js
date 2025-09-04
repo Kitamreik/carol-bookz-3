@@ -28,4 +28,7 @@ router.route('/auth/google/admin')
 router.route('/capstone-25/videos')
   .get(siteCtrl.videos)
 
+router.route('/course-wide/archive')
+  .get(siteCtrl.archive)
+
 module.exports = router;
