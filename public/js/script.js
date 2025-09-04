@@ -35,10 +35,12 @@ function adminTrigger() {
   let danger = "There has been an error. If you are a student having trouble logging in, please reach out to Kit.";
   let auth = "Request authenticated. Now loading...";
   
-
-  if (confirm) {
     let record = confirm;
     let passcode = "C00k13c@tz!";
+
+    if (!record || record == "" || null) {
+      window.location.replace("/");
+    }
 
     while(record){
       if (record == !passcode) {
@@ -52,13 +54,10 @@ function adminTrigger() {
       if (check == !passcode) {
         window.location.replace("/");
       } else {
-        // once past, user can see the entries
-        alert(auth);
-        break;
+        window.location.href("/");
       }
       
     } 
   }
 
-} 
 };
