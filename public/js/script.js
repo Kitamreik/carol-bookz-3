@@ -36,7 +36,7 @@ function adminTrigger() {
   let auth = "Request authenticated. Now loading...";
   
     let record = confirm;
-    let passcode = "C00k13c@tz!";
+    let passcode = process.env.PASSWORD;
 
     if (!record || record == "" || null) {
       window.location.replace("/");
